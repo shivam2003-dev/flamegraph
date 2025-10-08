@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  flamegraph-profiler:
+    build: .
+    image: flamegraph-profiler:latest
+    container_name: flamegraph-demo
+    
+    # Required for perf profiling
+    privileged: true
+    
+    # Mount volume for output files
+    volumes:
+      - ./output:/app/output
+      - ./app.py:/app/app.py
+    
+    # Set security options for perf
+    security_opt:
+      - seccomp:unconfined
+    
+    # Keep container running
+    stdin_open: true
+    tty: true
+    
+    # Environment variables
+    environment:
+      - PYTHONUNBUFFERED=1
+    
+    # Override default command
+    command: /bin/bash
