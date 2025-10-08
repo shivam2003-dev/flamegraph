@@ -1,8 +1,4 @@
-# Output files
-output/
-*.svg
-*.folded
-perf.data*
+
 
 # Python
 __pycache__/

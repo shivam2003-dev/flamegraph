@@ -1,0 +1,36 @@
+# Output Directory
+
+This directory will contain the generated flamegraphs and profiling data.
+
+## Files Generated
+
+When you run profiling, you'll see files like:
+
+- `default-flamegraph.svg` - Standard profiling output
+- `quick-flamegraph.svg` - Quick profiling output
+- `detailed-flamegraph.svg` - Detailed profiling output
+- `*.folded` - Intermediate folded stack traces
+- `perf.data` - Raw perf profiling data
+
+## Viewing Flamegraphs
+
+Flamegraph SVG files are interactive. Open them in a web browser for the best experience:
+
+```bash
+# macOS
+open default-flamegraph.svg
+
+# Linux
+xdg-open default-flamegraph.svg
+
+# Windows
+start default-flamegraph.svg
+```
+
+## Size Expectations
+
+- **Quick profiling**: ~100-500 KB
+- **Default profiling**: ~500 KB - 2 MB
+- **Detailed profiling**: ~2-10 MB
+
+Larger files mean more samples and more detail.
